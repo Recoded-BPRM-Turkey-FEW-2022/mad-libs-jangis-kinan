@@ -4,14 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
-    <div class='madLibsEdit'>
+    <audio loop autoplay src="/music/Hakuna_Matata.mp3"></audio>
+
+    <div id='entrance'>
+      <button id='enter'> Create your own <span>Hakuna Matata</span> World</button>
     </div>
-    <div class='madLibsPreview'>
+
+    <h1><span>Hakuna Matata</span></h1>
+
+    <div id='two-boxes'>
+      <div id='left-box'>
+        <h3>Create your own <span>Hakuna Matata</span> world here and just chill :)</h3>
+        <div class='madLibsEdit'>
+          <p id="editBox"></p>
+        </div>
+      </div>
+
+      <div id='right-box'></div>
+        <h3>Here you go:</h3>
+        <div class='madLibsPreview'>
+          <p id="previewBox"></p>
+        </div>
+      </div>
     </div>
+
+    <div id='reset'>
+      <button id='reset-btn'> Create another one?</button>
+    </div>
+
     <script src="do-not-touch.js"></script>
     <script src="madlibs.js"></script>
+
   </body>
+
 </html>

@@ -28,7 +28,8 @@
  */
 function parseStory(rawStory) {
   // Your code here.
-  return {}; // This line is currently wrong :)
+  // return {} // This line is currently wrong :)
+  return rawStory;
 }
 
 /**
@@ -38,5 +39,19 @@ function parseStory(rawStory) {
  * You'll want to use the results of parseStory() to display the story on the page.
  */
 getRawStory().then(parseStory).then((processedStory) => {
+  const previewView = document.querySelector(".madLibsPreview");
+  previewView.innerText = processedStory;
   console.log(processedStory);
 });
+
+function buttonsFunction() {
+  const button = document.querySelector('button#enter');
+  button.addEventListener('click', function (e) {
+    document.getElementById('entrance').style.display = "none";
+  })
+  button.addEventListener("mouseover", function () {
+    button.style.cursor = "pointer";
+  })
+}
+
+buttonsFunction();

@@ -1,3 +1,208 @@
 /**
  * Your CSS goes here.
  */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#faf8df;
+    background-image: url(images/Upper_image.png), url(images/Lower_Image.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top, center bottom;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#two-boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#left-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#right-box {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+  
+#entrance {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #faf8df;
+    background-image: url(images/Upper_Image.png), url(images/Lower_Image.png);
+    background-size: 100% auto;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+  
+/*Buttons' Style Below*/
+button#enter {
+    padding: 2rem;
+    position: absolute;
+    align-self: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: white;
+    /*animation: action 1s infinite alternate;*/
+    box-shadow: 6px 10px 32px -13px rgba(94, 90, 94, 1);
+}
+  
+@keyframes action {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(-10px);
+    }
+}
+
+button#reset-btn {
+    padding: 1rem;
+    margin: 3rem 0 6rem 0;
+    align-self: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: white;
+    box-shadow: 6px 10px 32px -13px rgba(94, 90, 94, 1);
+}
+
+/*Buttons' Style Above*/
+
+
+h1 {
+    margin-top: 10rem;
+}
+  
+span {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5em;
+    color: #4b723b;
+}
+  
+span:hover {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5em;
+    color: #4b723b;
+    transform: scale(1.1);
+}
+  
+form {
+    background-color: #faf8df;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 1%;
+    border-radius: 9px;
+    flex-wrap: wrap;
+}
+  
+.boxes {
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.editable {
+    background-color: #4b723b;
+    border-radius: 5px;
+    border-style: none;
+    padding: .5rem;
+    margin: 5px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: .9em;
+    text-align: center;
+}
+  
+input:focus {
+    width: 15em;
+    outline: none;
+    box-shadow: 0 0 1rem #b0b153;
+}
+  
+.readonly {
+    background-color: transparent;
+    padding: .5em;
+    margin: 5px;
+    border-style: none;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: .9em;
+    width: 200px;
+}
+  
+.madLibs {
+    width: 75%;
+}
+  
+  
+p {
+    padding: 2rem;
+    background-color: #b0b153;
+    border-radius: 10px;
+    border-style: none;
+    margin: 2.2rem 0;
+    opacity: 90%;
+    line-height: 4rem;
+    box-shadow: 6px 10px 32px -13px rgba(94, 90, 94, 1);
+}
+  
+.madLibs span {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1em;
+    color: black;
+    padding: .3rem 2rem;
+    border-style: none;
+    border-radius: 5px;
+    width: 2rem;
+    margin: 0 .4rem;
+}
+  
+  
+  
+@media screen and (max-width: 770px) {
+    body {
+      background-image: url(images/Upper_Image.png), url(images/Lower_Image.png);
+      background-position: center top, center bottom;
+      font-size: .9rem;
+      line-height: 2rem;
+    }
+  
+    .madLibs {
+      width: 80%;
+    }
+  
+  
+    button {
+      width: 80%;
+      font-size: 2rem;
+    }
+}
+  
+
+.readyStory {
+    transform: scale(1.1);
+    background-color: #4b723b;
+    border-radius: 10px;
+    border-style: solid #b0b153;
+  
+    opacity: 90%;
+    line-height: 3rem;
+    box-shadow: 0 0 1rem #b0b153;
+}
