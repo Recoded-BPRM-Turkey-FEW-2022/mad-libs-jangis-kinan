@@ -29,7 +29,33 @@
 function parseStory(rawStory) {
   // Your code here.
   // return {} // This line is currently wrong :)
-  return rawStory;
+  const result = [];
+  const split = rawStory.split(" ");
+  for (let i=0; i < split.length; i++) {
+    const word = split[i];
+    if ((/\[n\]/).test(word) === true) {
+      result.push({
+        word: word.replace("[n]", ""),
+        pos: "noun"
+      })
+    } else if ((/\[a\]/).test(word) === true) {
+      result.push({
+        word: word.replace("[a]", ""),
+        pos: "adjective"
+      })
+    } else if ((/\[v\]/).test(word) === true) {
+      result.push({
+        word: word.replace("[v]", ""),
+        pos: "verb"
+      })
+    } else {
+      result.push({
+        word: word
+      });
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -38,10 +64,55 @@ function parseStory(rawStory) {
  * 
  * You'll want to use the results of parseStory() to display the story on the page.
  */
+
 getRawStory().then(parseStory).then((processedStory) => {
   const previewView = document.querySelector(".madLibsPreview");
-  previewView.innerText = processedStory;
-  console.log(processedStory);
+  const editView = document.querySelector('.madLibsEdit');
+
+  const addSpaceToSpan = (element) => {
+    const space = document.createElement("span");
+    space.innerHTML = " ";
+    element.appendChild(space);
+  }
+
+  for (let i=0; i < processedStory.length; i++) {
+    const {word, pos} = processedStory[i];
+    if (pos) {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = pos;
+
+      const span = document.createElement("span");
+      span.innerText = pos;
+
+      input.addEventListener('input', updateValue);
+      function updateValue(event) {
+        if (event.target.value.length === 0) {
+          span.innerText = pos;
+        } else {
+          span.innerText = event.target.value;
+        }
+      }
+
+      editView.appendChild(input);
+      previewView.appendChild(span);
+
+    } else {
+      const normalWordsEditView = document.createElement("span");
+      normalWordsEditView.innerText = word;
+
+      const normalWordsPreviewView = document.createElement("span");
+      normalWordsPreviewView.innerText = word;
+
+      editView.appendChild(normalWordsEditView);
+      previewView.appendChild(normalWordsPreviewView);
+    }
+
+    addSpaceToSpan(editView);
+    addSpaceToSpan(previewView);
+
+  }
+
 });
 
 function buttonsFunction() {
