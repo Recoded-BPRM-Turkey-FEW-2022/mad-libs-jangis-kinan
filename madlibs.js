@@ -88,6 +88,7 @@ getRawStory().then(parseStory).then((processedStory) => {
   }
 
   // Live Update
+  let inputIndex = 0;
   for (let i=0; i < processedStory.length; i++) {
     // Using destructing to each object inside the result array from pasreStory.
     const {word, pos} = processedStory[i];
@@ -98,6 +99,9 @@ getRawStory().then(parseStory).then((processedStory) => {
       input.type = "text";
       input.placeholder = pos;
       input.maxLength = '20';
+      input.id = inputIndex;
+      inputIndex++;
+
 
       // We're defining the spans that will be added to the previewView (right box).
       const span = document.createElement("span");
@@ -173,5 +177,17 @@ function resetButton() {
 }
 
 resetButton();
+
+
+// Creating a keydown event listener to activate switching from one input to the next input by pressing enter.
+document.addEventListener('keydown', (event) => {
+  const code = event.code;
+  if (code === "Enter") {
+    const active = document.activeElement;
+    const a = parseInt(active.id);
+    active.blur();
+    document.getElementById(a+1).focus();
+  }
+})
 
 
