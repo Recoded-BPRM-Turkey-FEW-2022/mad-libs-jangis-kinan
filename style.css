@@ -1,3 +1,154 @@
-/**
- * Your CSS goes here.
- */
+/*
+Your CSS goes here.
+*/
+
+
+/*General Layout Style*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#faf8df;
+    background-image: url(images/Upper_image.png), url(images/Lower_Image.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top, center bottom;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#two-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 90%;
+}
+
+#left-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: #4b723b;
+    margin: 1.5rem 1.5rem 1.5rem 3rem;
+    padding: 2rem 2rem 2rem 2rem;
+    border-radius: 20px;
+    opacity: 90%;
+}
+
+#right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: #4b723b;
+    margin: 1.5rem 3rem 1.5rem 1.5rem;
+    padding: 2rem 2rem 2rem 2rem;
+    border-radius: 20px;
+    opacity: 90%;
+}
+
+/*The entrance's style. It has z-index:10 to cover over all other elements in the page*/
+#entrance {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #faf8df;
+    background-image: url(images/Upper_Image.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+  
+/*The entrance button's style*/
+button#enter {
+    padding: 2rem;
+    position: absolute;
+    align-self: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3rem;
+    color: #faf8df;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #4b723b;
+    box-shadow: 6px 10px 32px -13px rgba(94, 90, 94, 1);
+}
+  
+/*The reset button's style*/
+button#reset-btn {
+    padding: 1rem;
+    margin: 3rem 0 6rem 0;
+    align-self: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2rem;
+    color: black;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #b0b153;
+    box-shadow: 6px 10px 32px -13px rgba(94, 90, 94, 1);
+}
+
+
+/*HTML elements' Style*/
+h1 {
+    margin-top: 12rem;
+}
+  
+span {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5em;
+    color: #faf8df;
+    line-height: 2em;
+}
+
+input {
+    background-color: #b0b153;
+    border-radius: 5px;
+    border-style: none;
+    padding: .4rem;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5em;
+    
+}
+
+input:focus {
+    width: 8em;
+    outline: none;
+    box-shadow: 0 0 1rem #b0b153;
+}
+
+.input-span {
+    color: black;
+}
+  
+  
+@media screen and (max-width: 1000px) {
+    
+    /* body {
+      background-image: url(images/Upper_Image.png), url(images/Lower_Image.png);
+      background-position: center top, center bottom;
+      font-size: .9rem;
+      line-height: 2rem;
+    }
+   */
+
+    #two-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+
+    #left-box {
+        width: 100%;
+        margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+    }
+    
+    #right-box {
+        width: 100%;
+        margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+    }
+}
+  
